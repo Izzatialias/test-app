@@ -7,17 +7,28 @@ import { HomeComponent } from './home/home.component';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
 import { BeginnerComponent } from './beginner/beginner.component';
 import { RouterModule } from '@angular/router';
+import { ChatbotComponent } from './chatbot/chatbot.component';
+import { FormsModule } from '@angular/forms';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, CreateProfileComponent],
+  declarations: [
+    AppComponent,
+    CreateProfileComponent,
+    ChatbotComponent,
+    HomeComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    HomeComponent,
+
+    FormsModule,
+
     BeginnerComponent,
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent],
+  exports: [ChatbotComponent],
 })
 export class AppModule {}
